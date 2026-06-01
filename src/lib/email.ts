@@ -3,9 +3,8 @@ import nodemailer from "nodemailer";
 function createTransporter() {
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: false,
-    requireTLS: true,
+    port: Number(process.env.SMTP_PORT) || 465,
+    secure: Number(process.env.SMTP_PORT) === 465,
     tls: { rejectUnauthorized: false },
     auth: {
       user: process.env.SMTP_USER,

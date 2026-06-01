@@ -19,14 +19,8 @@ const schema = z.object({
   pan: z.string().regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, "Enter valid PAN (e.g. ABCDE1234F)").optional().or(z.literal("")),
   gender: z.enum(["Male", "Female", "Other"]).optional(),
   employmentType: z.enum(["Salaried", "Self-Employed", "Business", "Freelancer"]).optional(),
-  salary: z.preprocess(
-    (v) => (typeof v === "number" && isNaN(v) ? undefined : v),
-    z.number().min(10000, "Minimum salary ₹10,000").optional()
-  ),
-  desiredAmount: z.preprocess(
-    (v) => (typeof v === "number" && isNaN(v) ? undefined : v),
-    z.number().min(50000, "Minimum loan amount ₹50,000").optional()
-  ),
+  salary: z.coerce.number().min(10000, "Minimum salary ₹10,000").optional(),
+  desiredAmount: z.coerce.number().min(50000, "Minimum loan amount ₹50,000").optional(),
   city: z.string().min(2, "Enter your city").max(100).optional().or(z.literal("")),
   consent: z.boolean().refine((v) => v === true, { message: "You must agree to continue" }),
 });
