@@ -19,8 +19,8 @@ const schema = z.object({
   pan: z.string().regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, "Enter valid PAN (e.g. ABCDE1234F)").optional().or(z.literal("")),
   gender: z.enum(["Male", "Female", "Other"]).optional(),
   employmentType: z.enum(["Salaried", "Self-Employed", "Business", "Freelancer"]).optional(),
-  salary: z.coerce.number().min(10000, "Minimum salary ₹10,000").optional(),
-  desiredAmount: z.coerce.number().min(50000, "Minimum loan amount ₹50,000").optional(),
+  salary: z.number().min(10000, "Minimum salary ₹10,000").optional(),
+  desiredAmount: z.number().min(50000, "Minimum loan amount ₹50,000").optional(),
   city: z.string().min(2, "Enter your city").max(100).optional().or(z.literal("")),
   consent: z.boolean().refine((v) => v === true, { message: "You must agree to continue" }),
 });
@@ -243,10 +243,10 @@ export default function LeadForm() {
                   {/* Salary + Desired Amount */}
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <Field label="Monthly Salary (₹)" error={errors.salary?.message}>
-                      <Input type="number" placeholder="50000" {...register("salary", { valueAsNumber: true })} className={inputCls(!!errors.salary)} />
+                      <Input type="number" placeholder="50000" {...register("salary", { setValueAs: (v) => v === "" ? undefined : Number(v) })} className={inputCls(!!errors.salary)} />
                     </Field>
                     <Field label="Desired Loan Amount (₹)" error={errors.desiredAmount?.message}>
-                      <Input type="number" placeholder="500000" {...register("desiredAmount", { valueAsNumber: true })} className={inputCls(!!errors.desiredAmount)} />
+                      <Input type="number" placeholder="500000" {...register("desiredAmount", { setValueAs: (v) => v === "" ? undefined : Number(v) })} className={inputCls(!!errors.desiredAmount)} />
                     </Field>
                   </div>
 
