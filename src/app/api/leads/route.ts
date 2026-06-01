@@ -13,9 +13,18 @@ export async function POST(req: NextRequest) {
       gender, employmentType, salary, desiredAmount, city, consent,
     } = body;
 
-    if (!firstName || !lastName || !email || !mobile || !pan ||
-        !gender || !employmentType || !salary || !desiredAmount || !city || !consent) {
-      return NextResponse.json({ error: "All fields are required." }, { status: 400 });
+    if (!firstName || !lastName || !email || !mobile || !consent) {
+      return NextResponse.json({ error: "Name, email and mobile are required." }, { status: 400 });
+    }
+
+    // Validate email format
+    if (!/^\S+@\S+\.\S+$/.test(String(email))) {
+      return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
+    }
+
+    // Validate mobile format
+    if (!/^[6-9]\d{9}$/.test(String(mobile))) {
+      return NextResponse.json({ error: "Enter a valid 10-digit mobile number." }, { status: 400 });
     }
 
     await connectDB();
@@ -25,12 +34,12 @@ export async function POST(req: NextRequest) {
       lastName: String(lastName).trim().slice(0, 100),
       email: String(email).trim().toLowerCase().slice(0, 200),
       mobile: String(mobile).trim().slice(0, 15),
-      pan: String(pan).trim().toUpperCase().slice(0, 10),
-      gender: String(gender).trim(),
-      employmentType: String(employmentType).trim(),
-      salary: Number(salary),
-      desiredAmount: Number(desiredAmount),
-      city: String(city).trim().slice(0, 100),
+      ...(pan ? { pan: String(pan).trim().toUpperCase().slice(0, 10) } : {}),
+      ...(gender ? { gender: String(gender).trim() } : {}),
+      ...(employmentType ? { employmentType: String(employmentType).trim() } : {}),
+      ...(salary ? { salary: Number(salary) } : {}),
+      ...(desiredAmount ? { desiredAmount: Number(desiredAmount) } : {}),
+      ...(city ? { city: String(city).trim().slice(0, 100) } : {}),
       source: "website",
     });
 
@@ -47,11 +56,11 @@ export async function POST(req: NextRequest) {
         lastName: lead.lastName,
         email: lead.email,
         mobile: lead.mobile,
-        pan: lead.pan,
-        employmentType: lead.employmentType,
-        salary: lead.salary,
-        desiredAmount: lead.desiredAmount,
-        city: lead.city,
+        pan: lead.pan || "N/A",
+        employmentType: lead.employmentType || "N/A",
+        salary: lead.salary || 0,
+        desiredAmount: lead.desiredAmount || 0,
+        city: lead.city || "N/A",
       });
       console.log("Admin notification sent.");
     } catch (emailErr: unknown) {

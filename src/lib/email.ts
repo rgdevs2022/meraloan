@@ -37,7 +37,7 @@ export async function sendLeadConfirmation(to: string, name: string) {
             <li>Choose the best offer and apply instantly</li>
           </ol>
         </div>
-        <p style="color:#6B7280;font-size:13px;">Need immediate help? WhatsApp us at <a href="https://wa.me/919999999999" style="color:#E53935;">+91 99999 99999</a></p>
+        <p style="color:#6B7280;font-size:13px;">Need immediate help? WhatsApp us at <a href="https://wa.me/918796508140" style="color:#E53935;">+91 87965 08140</a></p>
         <hr style="border:none;border-top:1px solid #E5E7EB;margin:24px 0;" />
         <p style="color:#9CA3AF;font-size:12px;text-align:center;">© 2026 Mera Loan. All Rights Reserved.</p>
       </div>

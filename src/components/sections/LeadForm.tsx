@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { CheckCircle2, Loader2, ShieldCheck, Lock } from "lucide-react";
+import { CheckCircle2, Loader2, ShieldCheck, Lock, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,12 +16,18 @@ const schema = z.object({
   lastName: z.string().min(2, "Last name required").max(50),
   email: z.string().email("Enter a valid email"),
   mobile: z.string().regex(/^[6-9]\d{9}$/, "Enter valid 10-digit mobile"),
-  pan: z.string().regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, "Enter valid PAN (e.g. ABCDE1234F)"),
-  gender: z.enum(["Male", "Female", "Other"]).refine((v) => !!v, "Select gender"),
-  employmentType: z.enum(["Salaried", "Self-Employed", "Business", "Freelancer"]).refine((v) => !!v, "Select employment type"),
-  salary: z.number().min(10000, "Minimum salary ₹10,000").max(100000000),
-  desiredAmount: z.number().min(50000, "Minimum loan amount ₹50,000").max(100000000),
-  city: z.string().min(2, "Enter your city").max(100),
+  pan: z.string().regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, "Enter valid PAN (e.g. ABCDE1234F)").optional().or(z.literal("")),
+  gender: z.enum(["Male", "Female", "Other"]).optional(),
+  employmentType: z.enum(["Salaried", "Self-Employed", "Business", "Freelancer"]).optional(),
+  salary: z.preprocess(
+    (v) => (typeof v === "number" && isNaN(v) ? undefined : v),
+    z.number().min(10000, "Minimum salary ₹10,000").optional()
+  ),
+  desiredAmount: z.preprocess(
+    (v) => (typeof v === "number" && isNaN(v) ? undefined : v),
+    z.number().min(50000, "Minimum loan amount ₹50,000").optional()
+  ),
+  city: z.string().min(2, "Enter your city").max(100).optional().or(z.literal("")),
   consent: z.boolean().refine((v) => v === true, { message: "You must agree to continue" }),
 });
 
@@ -31,6 +37,7 @@ export default function LeadForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [serverError, setServerError] = useState("");
+  const [showConsentPopup, setShowConsentPopup] = useState(false);
 
   const {
     register,
@@ -152,7 +159,9 @@ export default function LeadForm() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  onSubmit={handleSubmit(onSubmit)}
+                  onSubmit={handleSubmit(onSubmit, (errs) => {
+                    if (errs.consent) setShowConsentPopup(true);
+                  })}
                   className="bg-white rounded-3xl p-8 shadow-card border border-gray-100"
                   noValidate
                 >
@@ -163,20 +172,20 @@ export default function LeadForm() {
 
                   {/* Name Row */}
                   <div className="grid grid-cols-2 gap-4 mb-4">
-                    <Field label="First Name" error={errors.firstName?.message}>
+                    <Field label="First Name" required error={errors.firstName?.message}>
                       <Input placeholder="Rahul" {...register("firstName")} className={inputCls(!!errors.firstName)} />
                     </Field>
-                    <Field label="Last Name" error={errors.lastName?.message}>
+                    <Field label="Last Name" required error={errors.lastName?.message}>
                       <Input placeholder="Sharma" {...register("lastName")} className={inputCls(!!errors.lastName)} />
                     </Field>
                   </div>
 
                   {/* Email + Mobile */}
                   <div className="grid grid-cols-2 gap-4 mb-4">
-                    <Field label="Email Address" error={errors.email?.message}>
+                    <Field label="Email Address" required error={errors.email?.message}>
                       <Input type="email" placeholder="rahul@email.com" {...register("email")} className={inputCls(!!errors.email)} />
                     </Field>
-                    <Field label="Mobile Number" error={errors.mobile?.message}>
+                    <Field label="Mobile Number" required error={errors.mobile?.message}>
                       <Input type="tel" placeholder="9876543210" maxLength={10} {...register("mobile")} className={inputCls(!!errors.mobile)} />
                     </Field>
                   </div>
@@ -299,6 +308,51 @@ export default function LeadForm() {
           </motion.div>
         </div>
       </div>
+
+      {/* Consent Popup */}
+      <AnimatePresence>
+        {showConsentPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+            onClick={() => setShowConsentPopup(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.85, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <AlertTriangle className="h-7 w-7 text-orange-500" />
+              </div>
+              <h3 className="text-lg font-black text-gray-900 mb-2">Consent Required</h3>
+              <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                Please check the consent checkbox to authorize Mera Loan to contact you with loan offers before proceeding.
+              </p>
+              <button
+                onClick={() => {
+                  setShowConsentPopup(false);
+                  setValue("consent", true, { shouldValidate: true });
+                }}
+                className="w-full bg-[#E53935] hover:bg-[#C62828] text-white font-bold py-3 rounded-xl transition-colors duration-200"
+              >
+                I Agree — Proceed
+              </button>
+              <button
+                onClick={() => setShowConsentPopup(false)}
+                className="mt-3 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                Cancel
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
@@ -314,15 +368,20 @@ function Field({
   error,
   children,
   className = "",
+  required = false,
 }: {
   label: string;
   error?: string;
   children: React.ReactNode;
   className?: string;
+  required?: boolean;
 }) {
   return (
     <div className={className}>
-      <Label className="text-sm font-semibold text-gray-700 mb-1.5 block">{label}</Label>
+      <Label className="text-sm font-semibold text-gray-700 mb-1.5 block">
+        {label}
+        {required ? <span className="text-red-500 ml-0.5">*</span> : <span className="text-gray-400 text-xs font-normal ml-1">(Optional)</span>}
+      </Label>
       {children}
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>

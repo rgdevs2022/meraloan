@@ -5,12 +5,12 @@ export interface ILead extends Document {
   lastName: string;
   email: string;
   mobile: string;
-  pan: string;
-  gender: string;
-  employmentType: string;
-  salary: number;
-  desiredAmount: number;
-  city: string;
+  pan?: string;
+  gender?: string;
+  employmentType?: string;
+  salary?: number;
+  desiredAmount?: number;
+  city?: string;
   status: "new" | "contacted" | "qualified" | "converted" | "lost";
   notes: string;
   source: string;
@@ -36,19 +36,19 @@ const LeadSchema = new Schema<ILead>(
     },
     pan: {
       type: String,
-      required: true,
+      required: false,
       uppercase: true,
       match: [/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, "Invalid PAN"],
     },
-    gender: { type: String, required: true, enum: ["Male", "Female", "Other"] },
+    gender: { type: String, required: false, enum: ["Male", "Female", "Other", "", null] },
     employmentType: {
       type: String,
-      required: true,
-      enum: ["Salaried", "Self-Employed", "Business", "Freelancer"],
+      required: false,
+      enum: ["Salaried", "Self-Employed", "Business", "Freelancer", "", null],
     },
-    salary: { type: Number, required: true, min: 0 },
-    desiredAmount: { type: Number, required: true, min: 0 },
-    city: { type: String, required: true, trim: true },
+    salary: { type: Number, required: false, min: 0 },
+    desiredAmount: { type: Number, required: false, min: 0 },
+    city: { type: String, required: false, trim: true },
     status: {
       type: String,
       default: "new",
