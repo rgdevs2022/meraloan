@@ -85,8 +85,8 @@ export default function CookiePolicyPage() {
             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Contact Us</h2>
             <p>
               For questions about our cookie practices, email us at{" "}
-              <a href="mailto:privacy@meraloan.in" className="text-[#E53935] hover:underline">
-                privacy@meraloan.in
+              <a href="mailto:loanapplication@merloan.co.in" className="text-[#E53935] hover:underline">
+                loanapplication@merloan.co.in
               </a>
             </p>
           </section>

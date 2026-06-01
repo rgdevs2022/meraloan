@@ -61,11 +61,11 @@ export default function Navbar({ showTagline = false }: { showTagline?: boolean 
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group" aria-label="Mera Loan Home">
-            <span className="text-2xl font-black tracking-tight text-[#E53935] group-hover:scale-105 transition-transform duration-200">
+            <span className={`text-2xl font-black tracking-tight group-hover:scale-105 transition-all duration-200 ${scrolled ? "text-[#E53935]" : "text-white"}`}>
               Mera Loan
             </span>
             {showTagline && (
-              <span className="text-[10px] font-medium text-gray-500 tracking-wide leading-tight mt-0.5">
+              <span className={`text-[10px] font-medium tracking-wide leading-tight mt-0.5 ${scrolled ? "text-gray-500" : "text-white/80"}`}>
                 A Reddington Global Consultancy Pvt Ltd Company
               </span>
             )}

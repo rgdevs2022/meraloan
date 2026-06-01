@@ -85,8 +85,8 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">7. Contact Us</h2>
             <p>
               For privacy-related queries, contact our Data Protection Officer at:{" "}
-              <a href="mailto:privacy@meraloan.in" className="text-[#E53935] hover:underline">
-                privacy@meraloan.in
+              <a href="mailto:loanapplication@merloan.co.in" className="text-[#E53935] hover:underline">
+                loanapplication@merloan.co.in
               </a>
             </p>
             <p className="mt-2">

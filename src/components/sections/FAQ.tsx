@@ -99,13 +99,13 @@ export default function FAQ() {
           <p className="text-gray-500 text-sm mb-4">Still have questions? Our experts are here to help.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:+919999999999"
-              className="inline-flex items-center justify-center gap-2 bg-[#0F172A] text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#1E293B] transition-colors"
+              href="tel:+918796508140"
+              className="inline-flex items-center justify-center gap-2 bg-[#EA580C] text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors"
             >
-              📞 Call Us: +91 99999 99999
+              📞 Call Us: +91 87965 08140
             </a>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/918796508140"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#22C55E] transition-colors"

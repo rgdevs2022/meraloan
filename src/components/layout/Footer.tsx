@@ -102,22 +102,22 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="tel:+919999999999" className="text-gray-400 hover:text-white text-sm transition-colors">
-                    +91 99999 99999
+                  <a href="tel:+918796508140" className="text-gray-400 hover:text-white text-sm transition-colors">
+                    +91 87965 08140
                   </a>
                   <p className="text-gray-600 text-xs mt-0.5">Mon–Sat, 9 AM – 7 PM</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
-                <a href="mailto:support@meraloan.in" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  support@meraloan.in
+                <a href="mailto:loanapplication@merloan.co.in" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  loanapplication@merloan.co.in
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  Mumbai, Maharashtra, India
+                  750, Udyog Vihar Phase 5, Sector 19, Gurugram, Haryana 122016
                 </span>
               </li>
             </ul>

@@ -90,8 +90,8 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">9. Contact</h2>
             <p>
               For any questions regarding these Terms, contact us at{" "}
-              <a href="mailto:legal@meraloan.in" className="text-[#E53935] hover:underline">
-                legal@meraloan.in
+              <a href="mailto:loanapplication@merloan.co.in" className="text-[#E53935] hover:underline">
+                loanapplication@merloan.co.in
               </a>
             </p>
           </section>

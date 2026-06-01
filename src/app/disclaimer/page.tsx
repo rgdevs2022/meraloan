@@ -66,8 +66,8 @@ export default function DisclaimerPage() {
             <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-3">Contact</h2>
             <p>
               For queries, contact us at{" "}
-              <a href="mailto:info@meraloan.in" className="text-[#E53935] hover:underline">
-                info@meraloan.in
+              <a href="mailto:loanapplication@merloan.co.in" className="text-[#E53935] hover:underline">
+                loanapplication@merloan.co.in
               </a>
             </p>
           </section>

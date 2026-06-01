@@ -3,7 +3,7 @@
 export default function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/919999999999?text=Hi%20Mera%20Loan%2C%20I%20need%20help%20with%20a%20loan."
+      href="https://wa.me/918796508140?text=Hi%20Mera%20Loan%2C%20I%20need%20help%20with%20a%20loan."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

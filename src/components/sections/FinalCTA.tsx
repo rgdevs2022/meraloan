@@ -25,9 +25,9 @@ export default function FinalCTA() {
 
           <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
             Ready to Find the{" "}
-            <span className="text-[#FF6B6B]">Best Loan Offer?</span>
+            <span className="text-[#0F172A]">Best Loan Offer?</span>
           </h2>
-          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-white text-lg mb-10 max-w-2xl mx-auto">
             Join 10,000+ Indians who found their perfect loan through Mera Loan. Check your eligibility in less than 60 seconds — free, secure, and no CIBIL impact.
           </p>
 
@@ -41,7 +41,7 @@ export default function FinalCTA() {
               <ArrowRight className="h-5 w-5" />
             </button>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/918796508140"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] text-white font-bold px-10 py-4 rounded-full hover:bg-[#22C55E] hover:scale-105 transition-all duration-200 text-base flex items-center justify-center gap-2"
@@ -50,7 +50,7 @@ export default function FinalCTA() {
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-white/50 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-10 text-white/90 text-sm">
             <span className="flex items-center gap-1.5">✅ Free Service</span>
             <span className="flex items-center gap-1.5">🔒 100% Secure</span>
             <span className="flex items-center gap-1.5">⚡ Instant Analysis</span>
