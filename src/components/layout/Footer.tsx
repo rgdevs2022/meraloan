@@ -110,8 +110,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
-                <a href="mailto:loanapplication@merloan.co.in" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  loanapplication@merloan.co.in
+                <a href="mailto:loanapplication@meraloan.co.in" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  loanapplication@meraloan.co.in
                 </a>
               </li>
               <li className="flex items-start gap-3">
