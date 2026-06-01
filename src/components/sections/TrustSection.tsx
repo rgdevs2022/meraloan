@@ -32,7 +32,7 @@ const TRUST_ITEMS = [
     icon: BadgeCheck,
     title: "Verified Partners",
     desc: "All lending partners are RBI-registered and fully compliant.",
-    color: "bg-red-100 text-[#E53935]",
+    color: "bg-blue-100 text-[#1B4FD8]",
   },
   {
     icon: Star,
@@ -53,10 +53,10 @@ export default function TrustSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             Your Trust, Our Priority
           </p>
-          <h2 className="text-4xl font-black text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
             Why Millions Trust <span className="gradient-text">Mera Loan</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -64,7 +64,7 @@ export default function TrustSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {TRUST_ITEMS.map((item, i) => (
             <motion.div
               key={item.title}

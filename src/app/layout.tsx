@@ -47,9 +47,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <meta name="theme-color" content="#E53935" />
+        <meta name="theme-color" content="#1B4FD8" />
       </head>
-      <body className="min-h-full flex flex-col" style={{ backgroundColor: "#F8FAFC", color: "#111827" }}>
+      <body className="min-h-full flex flex-col" style={{ backgroundColor: "#F0F4FF", color: "#111827" }}>
         {children}
         <Toaster position="top-center" toastOptions={{ duration: 4000, style: { borderRadius: "12px", fontWeight: 500 } }} />
       </body>

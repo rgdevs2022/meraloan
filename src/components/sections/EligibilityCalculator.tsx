@@ -38,10 +38,10 @@ export default function EligibilityCalculator() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             EMI Calculator
           </p>
-          <h2 className="text-4xl font-black text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
             Calculate Your <span className="gradient-text">Loan EMI</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
@@ -56,7 +56,7 @@ export default function EligibilityCalculator() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-[#F8FAFC] rounded-3xl p-8 space-y-8 border border-gray-100"
+            className="bg-[#F8FAFC] rounded-3xl p-5 sm:p-8 space-y-8 border border-gray-100"
           >
             <SliderField
               label="Loan Amount"
@@ -99,14 +99,14 @@ export default function EligibilityCalculator() {
             className="space-y-5"
           >
             {/* EMI highlight */}
-            <div className="gradient-brand rounded-3xl p-8 text-white text-center shadow-brand">
+            <div className="gradient-brand rounded-3xl p-6 sm:p-8 text-white text-center shadow-brand">
               <p className="text-white/70 text-sm mb-2 font-medium">Monthly EMI</p>
               <motion.div
                 key={emi()}
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="text-5xl font-black mb-2"
+                className="text-4xl sm:text-5xl font-black mb-2"
               >
                 {fmt(emi())}
               </motion.div>
@@ -128,7 +128,7 @@ export default function EligibilityCalculator() {
                   <circle cx="18" cy="18" r="15.9" fill="none" stroke="#E5E7EB" strokeWidth="3.5" />
                   <circle
                     cx="18" cy="18" r="15.9" fill="none"
-                    stroke="#E53935" strokeWidth="3.5"
+                    stroke="#1B4FD8" strokeWidth="3.5"
                     strokeDasharray={`${(loanAmount / totalPayable) * 100} ${100 - (loanAmount / totalPayable) * 100}`}
                     strokeLinecap="round"
                   />
@@ -139,7 +139,7 @@ export default function EligibilityCalculator() {
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-3 h-3 rounded-full bg-[#E53935]" />
+                  <div className="w-3 h-3 rounded-full bg-[#1B4FD8]" />
                   <span className="text-gray-600">Principal: {Math.round((loanAmount / totalPayable) * 100)}%</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
@@ -151,7 +151,7 @@ export default function EligibilityCalculator() {
 
             <button
               onClick={() => document.querySelector("#lead-form")?.scrollIntoView({ behavior: "smooth" })}
-              className="w-full gradient-brand text-white font-bold py-4 rounded-2xl shadow-brand hover:shadow-2xl hover:scale-[1.01] transition-all duration-200"
+              className="w-full gradient-accent text-white font-bold py-4 rounded-2xl shadow-brand hover:shadow-2xl hover:scale-[1.01] transition-all duration-200"
             >
               Check Eligibility for This Loan →
             </button>
@@ -173,15 +173,15 @@ function SliderField({
     <div>
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2 text-gray-700 font-semibold text-sm">
-          <span className="text-[#E53935]">{icon}</span>
+          <span className="text-[#1B4FD8]">{icon}</span>
           {label}
         </div>
-        <span className="text-[#E53935] font-black text-base">{format(value)}</span>
+        <span className="text-[#1B4FD8] font-black text-base">{format(value)}</span>
       </div>
       <Slider
         min={min} max={max} step={step} value={[value]}
         onValueChange={(v) => onChange(v[0])}
-        className="[&>span[role=slider]]:bg-[#E53935] [&>span[role=slider]]:border-[#E53935] [&_.bg-primary]:bg-[#E53935]"
+        className="[&>span[role=slider]]:bg-[#1B4FD8] [&>span[role=slider]]:border-[#1B4FD8] [&_.bg-primary]:bg-[#1B4FD8]"
       />
       <div className="flex justify-between text-xs text-gray-400 mt-1">
         <span>{format(min)}</span>
@@ -195,7 +195,7 @@ function ResultCard({ label, value, accent, muted }: { label: string; value: str
   return (
     <div className="bg-[#F8FAFC] rounded-2xl p-4 border border-gray-100">
       <p className="text-gray-500 text-xs mb-1">{label}</p>
-      <p className={`font-black text-lg ${accent ? "text-[#E53935]" : muted ? "text-gray-700" : "text-gray-900"}`}>
+      <p className={`font-black text-lg ${accent ? "text-[#1B4FD8]" : muted ? "text-gray-700" : "text-gray-900"}`}>
         {value}
       </p>
     </div>

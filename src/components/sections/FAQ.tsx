@@ -54,7 +54,7 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             Got Questions?
           </p>
           <h2 className="text-4xl font-black text-gray-900 mb-4">
@@ -76,9 +76,9 @@ export default function FAQ() {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="border border-gray-100 rounded-2xl px-6 shadow-card data-[state=open]:border-[#E53935]/30 data-[state=open]:shadow-brand transition-all duration-200"
+                className="border border-gray-100 rounded-2xl px-6 shadow-card data-[state=open]:border-[#1B4FD8]/30 data-[state=open]:shadow-brand transition-all duration-200"
               >
-                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-[#E53935] py-5 text-sm leading-snug [&>svg]:text-[#E53935]">
+                <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-[#1B4FD8] py-5 text-sm leading-snug [&>svg]:text-[#1B4FD8]">
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 text-sm leading-relaxed pb-5">
@@ -100,7 +100,7 @@ export default function FAQ() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="tel:+918796508140"
-              className="inline-flex items-center justify-center gap-2 bg-[#EA580C] text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#C2410C] transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#1B4FD8] text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#1E40AF] transition-colors"
             >
               📞 Call Us: +91 87965 08140
             </a>

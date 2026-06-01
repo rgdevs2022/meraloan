@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Download, Eye, Shield, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Eye, Shield, TrendingUp, AlertCircle, CheckCircle2 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 
@@ -26,7 +25,6 @@ const SAMPLE_REPORT = {
 };
 
 export default function CreditReport() {
-  const [downloaded, setDownloaded] = useState(false);
 
   return (
     <section className="py-20 bg-[#0F172A]" id="credit-report">
@@ -38,11 +36,11 @@ export default function CreditReport() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-[#FF6B6B] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#F59E0B] font-semibold text-sm uppercase tracking-widest mb-2">
             Credit Intelligence
           </p>
           <h2 className="text-4xl font-black text-white mb-4">
-            Your Complete <span className="text-[#FF6B6B]">Credit Report</span>
+            Your Complete <span className="text-[#F59E0B]">Credit Report</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
             Get a detailed analysis of your credit health, liabilities, FOIR, and personalized bank recommendations.
@@ -58,7 +56,7 @@ export default function CreditReport() {
           className="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-4xl mx-auto"
         >
           {/* Header bar */}
-          <div className="gradient-brand px-8 py-5 flex items-center justify-between">
+          <div className="gradient-brand px-4 sm:px-8 py-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <Shield className="h-6 w-6 text-white" />
               <div>
@@ -99,10 +97,10 @@ export default function CreditReport() {
 
               {/* Eligibility Score */}
               <div className="flex flex-col items-center justify-center">
-                <div className="text-4xl font-black text-[#E53935] mb-2">{SAMPLE_REPORT.eligibilityScore}/100</div>
+                <div className="text-4xl font-black text-[#1B4FD8] mb-2">{SAMPLE_REPORT.eligibilityScore}/100</div>
                 <p className="text-gray-500 text-xs font-medium mb-2">ELIGIBILITY SCORE</p>
-                <Progress value={SAMPLE_REPORT.eligibilityScore} className="h-2 w-full max-w-[140px] [&>div]:bg-[#E53935]" />
-                <p className="text-xs text-[#E53935] mt-1 font-medium flex items-center gap-1">
+                <Progress value={SAMPLE_REPORT.eligibilityScore} className="h-2 w-full max-w-[140px] [&>div]:bg-[#1B4FD8]" />
+                <p className="text-xs text-[#1B4FD8] mt-1 font-medium flex items-center gap-1">
                   <TrendingUp className="h-3 w-3" /> Strong Profile
                 </p>
               </div>
@@ -150,7 +148,7 @@ export default function CreditReport() {
                 {SAMPLE_REPORT.recommendations.map((rec) => (
                   <div key={rec.bank} className="bg-[#F8FAFC] rounded-2xl p-4 border border-gray-100">
                     <p className="font-bold text-gray-900 text-sm">{rec.bank}</p>
-                    <p className="text-[#E53935] font-black text-lg mt-1">{rec.rate}</p>
+                    <p className="text-[#1B4FD8] font-black text-lg mt-1">{rec.rate}</p>
                     <p className="text-gray-500 text-xs">Up to {rec.amount}</p>
                     <Badge
                       className={`mt-2 text-xs ${
@@ -185,24 +183,12 @@ export default function CreditReport() {
             <p className="text-gray-500 text-sm">
               This is a sample report. Get your personalized report for free.
             </p>
-            <div className="flex gap-3">
-              <button
-                onClick={() => {
-                  setDownloaded(true);
-                  setTimeout(() => setDownloaded(false), 3000);
-                }}
-                className="flex items-center gap-2 bg-[#0F172A] text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#1E293B] transition-colors"
-              >
-                <Download className="h-4 w-4" />
-                {downloaded ? "Downloaded!" : "Download Sample PDF"}
-              </button>
-              <button
+            <button
                 onClick={() => document.querySelector("#lead-form")?.scrollIntoView({ behavior: "smooth" })}
                 className="flex items-center gap-2 gradient-brand text-white font-semibold px-5 py-2.5 rounded-full text-sm shadow-brand"
               >
                 Get My Report →
               </button>
-            </div>
           </div>
         </motion.div>
       </div>

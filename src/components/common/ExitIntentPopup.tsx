@@ -65,7 +65,7 @@ export default function ExitIntentPopup() {
                   Wait! Don&apos;t Leave Empty-Handed
                 </h3>
                 <p className="text-gray-500 text-sm mb-6 leading-relaxed">
-                  Get a <strong className="text-[#E53935]">free credit score analysis</strong> and personalized loan recommendations in just 60 seconds.
+                  Get a <strong className="text-[#1B4FD8]">free credit score analysis</strong> and personalized loan recommendations in just 60 seconds.
                 </p>
 
                 <ul className="text-left space-y-2 mb-7">
@@ -84,7 +84,7 @@ export default function ExitIntentPopup() {
                     dismiss();
                     document.querySelector("#lead-form")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="w-full gradient-brand text-white font-bold py-4 rounded-2xl shadow-brand hover:shadow-2xl hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2 text-base border-0"
+                  className="w-full gradient-accent text-white font-bold py-4 rounded-2xl shadow-brand hover:shadow-2xl hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2 text-base border-0"
                 >
                   Check My Eligibility — Free
                   <ArrowRight className="h-5 w-5" />

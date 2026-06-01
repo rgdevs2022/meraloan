@@ -61,7 +61,7 @@ export default function Navbar({ showTagline = false }: { showTagline?: boolean 
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex flex-col leading-none group" aria-label="Mera Loan Home">
-            <span className={`text-2xl font-black tracking-tight group-hover:scale-105 transition-all duration-200 ${scrolled ? "text-[#E53935]" : "text-white"}`}>
+            <span className={`text-2xl font-black tracking-tight group-hover:scale-105 transition-all duration-200 ${scrolled ? "text-[#1B4FD8]" : "text-white"}`}>
               Mera Loan
             </span>
             {showTagline && (
@@ -79,7 +79,7 @@ export default function Navbar({ showTagline = false }: { showTagline?: boolean 
                 onClick={() => handleNavClick(link.href)}
                 className={`px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-150 cursor-pointer ${
                   scrolled
-                    ? "text-gray-700 hover:text-[#E53935] hover:bg-red-50"
+                    ? "text-gray-700 hover:text-[#1B4FD8] hover:bg-blue-50"
                     : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -92,7 +92,7 @@ export default function Navbar({ showTagline = false }: { showTagline?: boolean 
           <div className="hidden lg:flex items-center gap-3">
             <Button
               onClick={() => handleNavClick("#lead-form")}
-              className="gradient-brand text-white font-semibold px-6 py-2.5 rounded-full shadow-brand hover:shadow-lg hover:scale-105 transition-all duration-200 border-0"
+              className="gradient-accent text-white font-semibold px-6 py-2.5 rounded-full shadow-brand hover:shadow-lg hover:scale-105 transition-all duration-200 border-0"
             >
               Check Eligibility
               <ChevronRight className="ml-1 h-4 w-4" />
@@ -129,7 +129,7 @@ export default function Navbar({ showTagline = false }: { showTagline?: boolean 
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="w-full text-left px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-red-50 hover:text-[#E53935] transition-colors text-sm cursor-pointer"
+                  className="w-full text-left px-4 py-3 text-gray-700 font-medium rounded-lg hover:bg-blue-50 hover:text-[#1B4FD8] transition-colors text-sm cursor-pointer"
                 >
                   {link.label}
                 </button>
@@ -137,7 +137,7 @@ export default function Navbar({ showTagline = false }: { showTagline?: boolean 
               <div className="pt-2">
                 <Button
                   onClick={() => handleNavClick("#lead-form")}
-                  className="w-full gradient-brand text-white font-semibold rounded-full shadow-brand border-0"
+                  className="w-full gradient-accent text-white font-semibold rounded-full shadow-brand border-0"
                 >
                   Check Eligibility
                 </Button>

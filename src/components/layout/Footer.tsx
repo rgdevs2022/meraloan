@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <span className="text-3xl font-black text-[#E53935]">Mera Loan</span>
+              <span className="text-3xl font-black text-[#F59E0B]">Mera Loan</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               India&apos;s trusted loan comparison platform. We help you find the best loan offers from 50+ banks and NBFCs — quickly, transparently, and for free.
@@ -55,7 +55,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#E53935] flex items-center justify-center transition-colors duration-200"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#1B4FD8] flex items-center justify-center transition-colors duration-200"
                   aria-label={label}
                 >
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +74,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#E53935] text-sm transition-colors duration-150"
+                    className="text-gray-400 hover:text-[#F59E0B] text-sm transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -100,7 +100,7 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4 text-base">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
+                <Phone className="h-4 w-4 text-[#F59E0B] mt-0.5 flex-shrink-0" />
                 <div>
                   <a href="tel:+918796508140" className="text-gray-400 hover:text-white text-sm transition-colors">
                     +91 87965 08140
@@ -109,13 +109,13 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
+                <Mail className="h-4 w-4 text-[#F59E0B] mt-0.5 flex-shrink-0" />
                 <a href="mailto:loanapplication@meraloan.co.in" className="text-gray-400 hover:text-white text-sm transition-colors">
                   loanapplication@meraloan.co.in
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 text-[#E53935] mt-0.5 flex-shrink-0" />
+                <MapPin className="h-4 w-4 text-[#F59E0B] mt-0.5 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
                   750, Udyog Vihar Phase 5, Sector 19, Gurugram, Haryana 122016
                 </span>

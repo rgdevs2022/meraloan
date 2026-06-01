@@ -67,7 +67,7 @@ export default function LeadForm() {
   };
 
   return (
-    <section className="py-20 bg-[#F8FAFC]" id="lead-form">
+    <section className="py-20 bg-[#F0F4FF]" id="lead-form">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
@@ -79,7 +79,7 @@ export default function LeadForm() {
             transition={{ duration: 0.6 }}
             className="lg:sticky lg:top-24"
           >
-            <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
               Check Eligibility
             </p>
             <h2 className="text-4xl font-black text-gray-900 mb-4 leading-tight">
@@ -142,7 +142,7 @@ export default function LeadForm() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-[#E53935] font-semibold text-sm hover:underline"
+                    className="text-[#1B4FD8] font-semibold text-sm hover:underline"
                   >
                     Submit another enquiry →
                   </button>
@@ -156,16 +156,16 @@ export default function LeadForm() {
                   onSubmit={handleSubmit(onSubmit, (errs) => {
                     if (errs.consent) setShowConsentPopup(true);
                   })}
-                  className="bg-white rounded-3xl p-8 shadow-card border border-gray-100"
+                  className="bg-white rounded-3xl p-5 sm:p-8 shadow-card border border-gray-100"
                   noValidate
                 >
                   <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                    <Lock className="h-5 w-5 text-[#E53935]" />
+                    <Lock className="h-5 w-5 text-[#1B4FD8]" />
                     Loan Eligibility Form
                   </h3>
 
                   {/* Name Row */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <Field label="First Name" required error={errors.firstName?.message}>
                       <Input placeholder="Rahul" {...register("firstName")} className={inputCls(!!errors.firstName)} />
                     </Field>
@@ -175,7 +175,7 @@ export default function LeadForm() {
                   </div>
 
                   {/* Email + Mobile */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <Field label="Email Address" required error={errors.email?.message}>
                       <Input type="email" placeholder="rahul@email.com" {...register("email")} className={inputCls(!!errors.email)} />
                     </Field>
@@ -185,7 +185,7 @@ export default function LeadForm() {
                   </div>
 
                   {/* PAN + City */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <Field label="PAN Number" error={errors.pan?.message}>
                       <Input
                         placeholder="ABCDE1234F"
@@ -210,7 +210,7 @@ export default function LeadForm() {
                           onClick={() => setValue("gender", g, { shouldValidate: true })}
                           className={`flex-1 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-150 ${
                             gender === g
-                              ? "border-[#E53935] bg-red-50 text-[#E53935]"
+                              ? "border-[#1B4FD8] bg-blue-50 text-[#1B4FD8]"
                               : "border-gray-200 text-gray-500 hover:border-gray-300"
                           }`}
                         >
@@ -230,7 +230,7 @@ export default function LeadForm() {
                           onClick={() => setValue("employmentType", e, { shouldValidate: true })}
                           className={`py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-150 ${
                             employment === e
-                              ? "border-[#E53935] bg-red-50 text-[#E53935]"
+                              ? "border-[#1B4FD8] bg-blue-50 text-[#1B4FD8]"
                               : "border-gray-200 text-gray-500 hover:border-gray-300"
                           }`}
                         >
@@ -241,7 +241,7 @@ export default function LeadForm() {
                   </Field>
 
                   {/* Salary + Desired Amount */}
-                  <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <Field label="Monthly Salary (₹)" error={errors.salary?.message}>
                       <Input type="number" placeholder="50000" {...register("salary", { setValueAs: (v) => v === "" ? undefined : Number(v) })} className={inputCls(!!errors.salary)} />
                     </Field>
@@ -261,9 +261,9 @@ export default function LeadForm() {
                       />
                       <Label htmlFor="consent" className="text-xs text-gray-500 leading-relaxed cursor-pointer">
                         I authorize Mera Loan and its lending partners to contact me via call, SMS, or WhatsApp regarding loan offers. I agree to the{" "}
-                        <a href="/terms" className="text-[#E53935] hover:underline" target="_blank">Terms & Conditions</a>{" "}
+                        <a href="/terms" className="text-[#1B4FD8] hover:underline" target="_blank">Terms & Conditions</a>{" "}
                         and{" "}
-                        <a href="/privacy-policy" className="text-[#E53935] hover:underline" target="_blank">Privacy Policy</a>.
+                        <a href="/privacy-policy" className="text-[#1B4FD8] hover:underline" target="_blank">Privacy Policy</a>.
                       </Label>
                     </div>
                     {errors.consent && (
@@ -333,7 +333,7 @@ export default function LeadForm() {
                   setShowConsentPopup(false);
                   setValue("consent", true, { shouldValidate: true });
                 }}
-                className="w-full bg-[#E53935] hover:bg-[#C62828] text-white font-bold py-3 rounded-xl transition-colors duration-200"
+                className="w-full bg-[#1B4FD8] hover:bg-[#1E40AF] text-white font-bold py-3 rounded-xl transition-colors duration-200"
               >
                 I Agree — Proceed
               </button>
@@ -352,8 +352,8 @@ export default function LeadForm() {
 }
 
 function inputCls(hasError: boolean) {
-  return `h-11 rounded-xl border-2 transition-colors focus-visible:ring-0 focus-visible:border-[#E53935] ${
-    hasError ? "border-red-400 bg-red-50" : "border-gray-200 focus:border-[#E53935]"
+  return `h-11 rounded-xl border-2 transition-colors focus-visible:ring-0 focus-visible:border-[#1B4FD8] ${
+    hasError ? "border-red-400 bg-red-50" : "border-gray-200 focus:border-[#1B4FD8]"
   }`;
 }
 

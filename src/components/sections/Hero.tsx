@@ -23,9 +23,9 @@ export default function Hero() {
     >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#E53935]/15 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] bg-[#FF6B6B]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#1B4FD8]/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] bg-[#2563EB]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-[#F59E0B]/5 rounded-full blur-3xl" />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -48,7 +48,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="inline-flex items-center gap-2 bg-white/25 border border-white/50 rounded-full px-4 py-2 mb-6"
             >
-              <TrendingUp className="h-4 w-4 text-[#FF6B6B]" />
+              <TrendingUp className="h-4 w-4 text-[#F59E0B]" />
               <span className="text-sm font-medium text-white/90">India&apos;s Smartest Loan Platform</span>
             </motion.div>
 
@@ -59,7 +59,7 @@ export default function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6"
             >
               Get the{" "}
-              <span className="text-[#0F172A]">Best Loan</span>{" "}
+              <span className="text-[#F59E0B]">Best Loan</span>{" "}
               Offers in Minutes
             </motion.h1>
 
@@ -81,7 +81,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 onClick={() => scrollTo("#lead-form")}
-                className="gradient-brand border-0 text-white font-bold px-8 py-4 h-auto rounded-full text-base shadow-brand hover:shadow-2xl hover:scale-105 transition-all duration-200"
+                className="gradient-accent border-0 text-white font-bold px-8 py-4 h-auto rounded-full text-base shadow-brand hover:shadow-2xl hover:scale-105 transition-all duration-200"
               >
                 Check Eligibility
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -192,7 +192,7 @@ function DashboardIllustration() {
           <p className="text-gray-500 text-xs mb-2">TOP RECOMMENDED BANKS</p>
           <div className="flex gap-2 flex-wrap">
             {["HDFC", "ICICI", "Axis", "Kotak"].map((b) => (
-              <span key={b} className="bg-[#E53935]/80 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+              <span key={b} className="bg-[#1B4FD8] text-white text-xs font-bold px-2.5 py-1 rounded-full">
                 {b}
               </span>
             ))}
@@ -220,8 +220,8 @@ function DashboardIllustration() {
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-3 flex items-center gap-2"
       >
-        <div className="w-8 h-8 bg-red-100 rounded-xl flex items-center justify-center">
-          <TrendingUp className="h-4 w-4 text-[#E53935]" />
+        <div className="w-8 h-8 bg-blue-100 rounded-xl flex items-center justify-center">
+          <TrendingUp className="h-4 w-4 text-[#1B4FD8]" />
         </div>
         <div>
           <p className="text-xs font-bold text-gray-800">₹100 Cr+</p>

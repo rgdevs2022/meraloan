@@ -7,8 +7,8 @@ export default function FinalCTA() {
   return (
     <section className="py-20 gradient-hero relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#E53935]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#FF6B6B]/8 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#2563EB]/15 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#1B4FD8]/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -19,13 +19,13 @@ export default function FinalCTA() {
           transition={{ duration: 0.7 }}
         >
           <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
-            <Clock className="h-4 w-4 text-[#FF6B6B]" />
+            <Clock className="h-4 w-4 text-[#F59E0B]" />
             <span className="text-sm font-medium">Takes less than 60 seconds</span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-tight">
             Ready to Find the{" "}
-            <span className="text-[#0F172A]">Best Loan Offer?</span>
+            <span className="text-[#F59E0B]">Best Loan Offer?</span>
           </h2>
           <p className="text-white text-lg mb-10 max-w-2xl mx-auto">
             Join 10,000+ Indians who found their perfect loan through Mera Loan. Check your eligibility in less than 60 seconds — free, secure, and no CIBIL impact.
@@ -34,8 +34,7 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => document.querySelector("#lead-form")?.scrollIntoView({ behavior: "smooth" })}
-              className="gradient-brand text-white font-bold px-10 py-4 rounded-full shadow-brand hover:shadow-2xl hover:scale-105 transition-all duration-200 text-base flex items-center justify-center gap-2"
-              style={{ background: "linear-gradient(135deg,#FF6B6B,#E53935)" }}
+              className="gradient-accent text-white font-bold px-10 py-4 rounded-full shadow-brand hover:shadow-2xl hover:scale-105 transition-all duration-200 text-base flex items-center justify-center gap-2"
             >
               Get Started Now
               <ArrowRight className="h-5 w-5" />

@@ -33,7 +33,7 @@ const TESTIMONIALS = [
     review: "The credit report feature is fantastic! I could see exactly why my previous loan applications were rejected and what I needed to improve. Highly recommend to everyone.",
     rating: 5,
     initials: "AJ",
-    color: "from-orange-400 to-red-500",
+    color: "from-blue-400 to-indigo-500",
   },
   {
     name: "Vikram Singh",
@@ -80,7 +80,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-[#F8FAFC]" id="testimonials">
+    <section className="py-20 bg-[#F0F4FF]" id="testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +89,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             Success Stories
           </p>
           <h2 className="text-4xl font-black text-gray-900 mb-4">
@@ -123,10 +123,10 @@ export default function Testimonials() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
                   className={`bg-white rounded-3xl p-6 shadow-card border border-gray-100 ${
-                    i === 1 ? "shadow-brand ring-2 ring-[#E53935]/20" : ""
+                    i === 1 ? "shadow-brand ring-2 ring-[#1B4FD8]/20" : "hidden md:block"
                   }`}
                 >
-                  <Quote className="h-8 w-8 text-[#E53935]/20 mb-4" />
+                  <Quote className="h-8 w-8 text-[#1B4FD8]/20 mb-4" />
                   <p className="text-gray-700 text-sm leading-relaxed mb-6 italic">
                     &ldquo;{t.review}&rdquo;
                   </p>
@@ -156,7 +156,7 @@ export default function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-11 h-11 rounded-full border-2 border-gray-200 hover:border-[#E53935] text-gray-500 hover:text-[#E53935] flex items-center justify-center transition-colors duration-200"
+              className="w-11 h-11 rounded-full border-2 border-gray-200 hover:border-[#1B4FD8] text-gray-500 hover:text-[#1B4FD8] flex items-center justify-center transition-colors duration-200"
               aria-label="Previous"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -167,7 +167,7 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 bg-[#E53935]" : "w-2 bg-gray-300"
+                  i === current ? "w-8 bg-[#1B4FD8]" : "w-2 bg-gray-300"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
@@ -175,7 +175,7 @@ export default function Testimonials() {
 
             <button
               onClick={next}
-              className="w-11 h-11 rounded-full border-2 border-gray-200 hover:border-[#E53935] text-gray-500 hover:text-[#E53935] flex items-center justify-center transition-colors duration-200"
+              className="w-11 h-11 rounded-full border-2 border-gray-200 hover:border-[#1B4FD8] text-gray-500 hover:text-[#1B4FD8] flex items-center justify-center transition-colors duration-200"
               aria-label="Next"
             >
               <ChevronRight className="h-5 w-5" />

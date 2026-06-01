@@ -9,8 +9,8 @@ const STEPS = [
     step: "01",
     title: "Fill Details",
     desc: "Share your basic info, employment details, and desired loan amount in under 2 minutes.",
-    color: "bg-red-100 text-[#E53935]",
-    border: "border-[#E53935]",
+    color: "bg-blue-100 text-[#1B4FD8]",
+    border: "border-[#1B4FD8]",
   },
   {
     icon: BarChart2,
@@ -65,7 +65,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             Simple Process
           </p>
           <h2 className="text-4xl font-black text-gray-900 mb-4">
@@ -124,7 +124,7 @@ export default function HowItWorks() {
         >
           <button
             onClick={() => document.querySelector("#lead-form")?.scrollIntoView({ behavior: "smooth" })}
-            className="gradient-brand text-white font-bold px-10 py-4 rounded-full shadow-brand hover:shadow-2xl hover:scale-105 transition-all duration-200 text-base"
+            className="gradient-accent text-white font-bold px-10 py-4 rounded-full shadow-brand hover:shadow-2xl hover:scale-105 transition-all duration-200 text-base"
           >
             Start Now — It&apos;s Free
           </button>

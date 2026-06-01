@@ -17,10 +17,10 @@ const FEATURES = [
     icon: Target,
     title: "Best Loan Matching",
     desc: "Get personalized loan recommendations from 50+ lenders, matched to your profile, credit score, and financial goals.",
-    color: "from-[#E53935] to-[#FF6B6B]",
-    bg: "bg-red-50",
-    iconBg: "bg-red-100",
-    iconColor: "text-[#E53935]",
+    color: "from-[#1B4FD8] to-[#2563EB]",
+    bg: "bg-blue-50",
+    iconBg: "bg-blue-100",
+    iconColor: "text-[#1B4FD8]",
   },
   {
     icon: Layers,
@@ -52,7 +52,7 @@ const cardVariants: Variants = {
 
 export default function WhyChoose() {
   return (
-    <section className="py-20 bg-[#F8FAFC]" id="about">
+    <section className="py-20 bg-[#F0F4FF]" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export default function WhyChoose() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             Why Mera Loan
           </p>
           <h2 className="text-4xl font-black text-gray-900 mb-4">

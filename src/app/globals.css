@@ -4,15 +4,15 @@
 
 /* ── Mera Loan Design Tokens ── */
 :root {
-  --brand-primary: #E53935;
-  --brand-secondary: #FF6B6B;
-  --brand-accent: #0F172A;
-  --brand-success: #22C55E;
-  --brand-bg: #F8FAFC;
+  --brand-primary: #1B4FD8;
+  --brand-secondary: #2563EB;
+  --brand-accent: #F59E0B;
+  --brand-success: #10B981;
+  --brand-bg: #F0F4FF;
   --brand-card: #FFFFFF;
-  --brand-text: #111827;
-  --brand-muted: #6B7280;
-  --brand-border: #E5E7EB;
+  --brand-text: #0F172A;
+  --brand-muted: #64748B;
+  --brand-border: #E2E8F0;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -139,8 +139,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-color: #F8FAFC;
-    color: #111827;
+    background-color: #F0F4FF;
+    color: #0F172A;
   }
   html {
     @apply font-sans;
@@ -149,18 +149,18 @@
 }
 
 @layer utilities {
-  .text-brand-primary { color: #E53935; }
-  .text-brand-secondary { color: #FF6B6B; }
-  .text-brand-accent { color: #0F172A; }
-  .text-brand-success { color: #22C55E; }
-  .bg-brand-primary { background-color: #E53935; }
-  .bg-brand-secondary { background-color: #FF6B6B; }
+  .text-brand-primary { color: #1B4FD8; }
+  .text-brand-secondary { color: #2563EB; }
+  .text-brand-accent { color: #F59E0B; }
+  .text-brand-success { color: #10B981; }
+  .bg-brand-primary { background-color: #1B4FD8; }
+  .bg-brand-secondary { background-color: #2563EB; }
   .bg-brand-accent { background-color: #0F172A; }
-  .bg-brand-bg { background-color: #F8FAFC; }
-  .border-brand-primary { border-color: #E53935; }
+  .bg-brand-bg { background-color: #F0F4FF; }
+  .border-brand-primary { border-color: #1B4FD8; }
 
   .shadow-brand {
-    box-shadow: 0 4px 24px 0 rgba(229, 57, 53, 0.12);
+    box-shadow: 0 4px 24px 0 rgba(27, 79, 216, 0.22);
   }
   .shadow-card {
     box-shadow: 0 2px 16px 0 rgba(15, 23, 42, 0.08);
@@ -172,13 +172,16 @@
     border: 1px solid rgba(255,255,255,0.4);
   }
   .gradient-hero {
-    background: linear-gradient(135deg, #EA580C 0%, #F97316 50%, #C2410C 100%);
+    background: linear-gradient(135deg, #0A1628 0%, #0F2157 45%, #1B4FD8 100%);
   }
   .gradient-brand {
-    background: linear-gradient(135deg, #E53935 0%, #FF6B6B 100%);
+    background: linear-gradient(135deg, #1B4FD8 0%, #2563EB 100%);
+  }
+  .gradient-accent {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
   }
   .gradient-text {
-    background: linear-gradient(135deg, #E53935 0%, #FF6B6B 100%);
+    background: linear-gradient(135deg, #1B4FD8 0%, #2563EB 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

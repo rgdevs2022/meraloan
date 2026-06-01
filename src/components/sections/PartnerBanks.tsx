@@ -81,7 +81,7 @@ export default function PartnerBanks() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-[#E53935] font-semibold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#1B4FD8] font-semibold text-sm uppercase tracking-widest mb-2">
             Trusted Partners
           </p>
           <h2 className="text-3xl font-black text-gray-900">
